@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad_rajgad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E87D38" />
+      <stop offset="45%" stop-color="#E2552B" />
+      <stop offset="85%" stop-color="#2B0E0A" />
+      <stop offset="100%" stop-color="#0D0706" />
+    </linearGradient>
+    <linearGradient id="goldG_rajgad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E27A" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#8F6B14" />
+    </linearGradient>
+    <linearGradient id="tealRim_rajgad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#FF9933" />
+    </linearGradient>
+    <filter id="glow_rajgad">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#38BDF8" flood-opacity="0.4" />
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#D4AF37" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="600" height="750" fill="url(#skyGrad_rajgad)" />
+
+  <!-- Sun Disk with Aureole -->
+  <circle cx="300" cy="220" r="110" fill="#FFF2D6" opacity="0.8" />
+  <circle cx="300" cy="220" r="140" fill="#FF9933" opacity="0.25" />
+  <circle cx="300" cy="220" r="160" stroke="url(#goldG_rajgad)" stroke-width="1" stroke-dasharray="8 6" opacity="0.3" />
+
+  <!-- Soaring Birds -->
+  <path d="M110,130 Q120,120 130,125 Q140,120 150,130" stroke="#0D0A08" stroke-width="2" fill="none" opacity="0.7" />
+  <path d="M140,105 Q148,97 156,101 Q164,97 172,105" stroke="#0D0A08" stroke-width="2" fill="none" opacity="0.6" />
+  <path d="M440,150 Q450,140 460,145 Q470,140 480,150" stroke="#0D0A08" stroke-width="2" fill="none" opacity="0.6" />
+
+  
+  <!-- Sahyadri Mountain Ridges with Teal-Gold Edge Rim -->
+  <path d="M0,360 Q140,310 280,340 T600,300 L600,750 L0,750 Z" fill="#1C090A" />
+  <path d="M0,430 C120,400 220,420 330,370 C450,320 520,400 600,360 L600,750 L0,750 Z" fill="#100506" />
+
+  <!-- Mountain Fortress Citadel & Bastions -->
+  <g filter="url(#glow_rajgad)">
+    <path d="M110,400 
+             L130,360 L155,360 L155,370 L210,370 L210,330 L245,330 L245,320 L265,320 L265,300 L335,300 L335,320 L355,320 L355,330 L390,330 L390,370 L445,370 L445,360 L470,360 L490,400 
+             C430,420 320,410 240,430 Z" 
+          fill="#090304" stroke="url(#tealRim_rajgad)" stroke-width="2.5" />
+    <!-- Bale Killa & Watchtowers -->
+    <rect x="280" y="275" width="40" height="30" rx="2" fill="#090304" stroke="url(#goldG_rajgad)" stroke-width="1.5" />
+  </g>
+  
+
+  <!-- Flagpole & Flowing Bhagwa Zenda -->
+  <line x1="300" y1="300" x2="300" y2="215" stroke="#0D0A08" stroke-width="4" />
+  <line x1="300" y1="300" x2="300" y2="215" stroke="#D4AF37" stroke-width="1.5" />
+  <path d="M300,215 L350,228 L328,240 L350,252 L300,265 Z" fill="#FF9933" stroke="#F7E27A" stroke-width="1" />
+
+  <!-- Vignette & Bottom Text Plate -->
+  <rect y="540" width="600" height="210" fill="#0A0605" opacity="0.95" />
+  <line x1="60" y1="540" x2="540" y2="540" stroke="url(#goldG_rajgad)" stroke-width="2" />
+
+  <!-- Fort Title & Details -->
+  <g font-family="'Cinzel Decorative', serif" text-anchor="middle">
+    <text x="300" y="605" fill="url(#goldG_rajgad)" font-size="28" font-weight="900" letter-spacing="3">RAJGAD FORT</text>
+  </g>
+  <g font-family="'Yatra One', 'Mukta', serif" text-anchor="middle">
+    <text x="300" y="645" fill="#F5ECD7" font-size="22" font-weight="700">किल्ले राजगड</text>
+  </g>
+  <g font-family="'Mukta', sans-serif" text-anchor="middle">
+    <text x="300" y="685" fill="#E8B4B8" font-size="15" letter-spacing="3">HILL FORT • CAPITAL · 26 YRS</text>
+  </g>
+</svg>

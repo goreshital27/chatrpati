@@ -1,0 +1,77 @@
+/* Halftone texture overlay */
+.halftone-overlay {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 6px 6px;
+}
+
+.halftone-blood {
+  background-color: var(--blood);
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.45) 1.5px, transparent 1.5px);
+  background-size: 6px 6px;
+}
+
+.halftone-maroon {
+  background-color: var(--maroon);
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.15) 1.5px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* Subtle noise grain texture */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Gold foil border styling */
+.gold-foil-border {
+  border-image: linear-gradient(135deg, #8F6B14 0%, #D4AF37 25%, #F7E27A 50%, #D4AF37 75%, #8F6B14 100%) 1;
+}
+
+/* Metallic chamfered clip-paths */
+.clip-nav-pill {
+  clip-path: polygon(18px 0%, calc(100% - 18px) 0%, 100% 50%, calc(100% - 18px) 100%, 18px 100%, 0% 50%);
+}
+
+.clip-chamfer-both {
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+}
+
+.clip-card-beveled {
+  clip-path: polygon(
+    0 16px,
+    16px 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% calc(100% - 24px),
+    calc(100% - 24px) 100%,
+    24px 100%,
+    0 calc(100% - 24px)
+  );
+}
+
+.clip-btn-angular {
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+}
+
+.clip-btn-angular-rev {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+}
+
+/* Metallic gradient text */
+.text-gold-metallic {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5ECD7 30%, #D4AF37 70%, #997315 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-saffron-metallic {
+  background: linear-gradient(180deg, #FFF1E0 0%, #FF9933 50%, #B85900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-steel-metallic {
+  background: linear-gradient(180deg, #FFFFFF 0%, #CFCBC7 45%, #7D7874 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 500" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="midHillGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#281113" />
+      <stop offset="100%" stop-color="#0E0506" />
+    </linearGradient>
+    <linearGradient id="bhagwaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="100%" stop-color="#E2552B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Midground Sahyadri rugged crags -->
+  <path d="M0,280 
+           C240,240 450,290 680,220 
+           C860,170 1020,250 1200,190 
+           C1440,120 1680,260 1920,200 
+           L1920,500 L0,500 Z" 
+        fill="url(#midHillGrad)" />
+
+  <!-- Saffron Swallowtail Flags (Bhagwa Zenda) on the hill peaks -->
+  <!-- Flag 1 on left peak -->
+  <line x1="320" y1="260" x2="320" y2="170" stroke="#0A0404" stroke-width="4" />
+  <path d="M320,170 L380,185 L350,195 L380,205 L320,220 Z" fill="url(#bhagwaGrad)" opacity="0.9" />
+
+  <!-- Flag 2 on center crest -->
+  <line x1="680" y1="220" x2="680" y2="130" stroke="#0A0404" stroke-width="4" />
+  <path d="M680,130 L750,145 L710,160 L750,175 L680,190 Z" fill="url(#bhagwaGrad)" opacity="0.95" />
+
+  <!-- Flag 3 on right ridge -->
+  <line x1="1350" y1="180" x2="1350" y2="90" stroke="#0A0404" stroke-width="4" />
+  <path d="M1350,90 L1420,105 L1385,120 L1420,135 L1350,150 Z" fill="url(#bhagwaGrad)" opacity="0.95" />
+
+  <!-- Spears standing in silhouette -->
+  <line x1="300" y1="265" x2="308" y2="190" stroke="#0A0404" stroke-width="2.5" />
+  <polygon points="308,185 305,193 311,193" fill="#D4AF37" />
+
+  <line x1="335" y1="260" x2="340" y2="185" stroke="#0A0404" stroke-width="2.5" />
+  <polygon points="340,180 337,188 343,188" fill="#D4AF37" />
+
+  <line x1="700" y1="225" x2="706" y2="150" stroke="#0A0404" stroke-width="2.5" />
+  <polygon points="706,145 703,153 709,153" fill="#D4AF37" />
+
+  <line x1="1330" y1="185" x2="1325" y2="110" stroke="#0A0404" stroke-width="2.5" />
+  <polygon points="1325,105 1322,113 1328,113" fill="#D4AF37" />
+</svg>
+

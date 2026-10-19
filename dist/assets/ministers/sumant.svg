@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <radialGradient id="mGlow_sumant" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#24103D" />
+      <stop offset="65%" stop-color="#120621" />
+      <stop offset="100%" stop-color="#090312" />
+    </radialGradient>
+    <linearGradient id="goldM_sumant" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E27A" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#8F6B14" />
+    </linearGradient>
+    <linearGradient id="purpleRim_sumant" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="mFilter_sumant">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#A78BFA" flood-opacity="0.5" />
+      <feDropShadow dx="0" dy="2" stdDeviation="12" flood-color="#D4AF37" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#mGlow_sumant)" />
+
+  <!-- Royal Darbar Aureole -->
+  <circle cx="300" cy="270" r="145" fill="none" stroke="url(#purpleRim_sumant)" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.45" />
+  <circle cx="300" cy="270" r="160" fill="none" stroke="url(#goldM_sumant)" stroke-width="1" opacity="0.3" />
+
+  <!-- Minister Graphic -->
+  <g filter="url(#mFilter_sumant)">
+    <!-- Royal Pagadi Turban -->
+    <ellipse cx="300" cy="205" rx="55" ry="42" fill="#1C0E2E" stroke="url(#purpleRim_sumant)" stroke-width="2.5" />
+    <path d="M255,205 C255,155 345,155 345,205 Z" fill="#2D144B" stroke="url(#purpleRim_sumant)" stroke-width="2.5" />
+    <circle cx="300" cy="155" r="5" fill="#F7E27A" />
+
+    <!-- Head Profile -->
+    <ellipse cx="300" cy="225" rx="30" ry="32" fill="#0F0619" />
+    <path d="M285,240 C295,255 305,255 315,240" stroke="#D4AF37" stroke-width="2" fill="none" />
+
+    <!-- Royal Robe Angarkha -->
+    <path d="M185,380 C200,280 270,260 300,260 C330,260 400,280 415,380 C415,440 385,520 365,560 L235,560 C215,520 185,440 185,380 Z" 
+          fill="#11071F" stroke="url(#purpleRim_sumant)" stroke-width="2.5" />
+
+    <!-- Royal Farman / State Ledger in Hand -->
+    <rect x="265" y="360" width="70" height="95" rx="4" fill="#25123D" stroke="url(#goldM_sumant)" stroke-width="2.5" />
+    <line x1="280" y1="385" x2="320" y2="385" stroke="#D4AF37" stroke-width="1.5" />
+    <line x1="280" y1="405" x2="320" y2="405" stroke="#D4AF37" stroke-width="1.5" />
+    <line x1="280" y1="425" x2="310" y2="425" stroke="#D4AF37" stroke-width="1.5" />
+  </g>
+
+  <!-- Bottom Title Plate -->
+  <rect y="560" width="600" height="190" fill="#0A0412" opacity="0.96" />
+  <line x1="60" y1="560" x2="540" y2="560" stroke="url(#goldM_sumant)" stroke-width="2" />
+
+  <g font-family="'Cinzel Decorative', serif" text-anchor="middle">
+    <text x="300" y="620" fill="url(#goldM_sumant)" font-size="26" font-weight="900" letter-spacing="2">RAMCHANDRA TRIMBAK</text>
+  </g>
+  <g font-family="'Yatra One', 'Mukta', serif" text-anchor="middle">
+    <text x="300" y="660" fill="#F5ECD7" font-size="22" font-weight="700">रामचंद्र त्रिंबक</text>
+  </g>
+  <g font-family="'Mukta', sans-serif" text-anchor="middle">
+    <text x="300" y="700" fill="#A78BFA" font-size="15" letter-spacing="3">FOREIGN MINISTER (SUMANT)</text>
+  </g>
+</svg>

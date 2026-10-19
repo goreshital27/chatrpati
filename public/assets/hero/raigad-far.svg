@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 600" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="ridgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B1C1D" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#1A0A0B" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  <!-- Distant Sahyadri mountain ridgeline with Raigad plateau & bastions -->
+  <path d="M0,320 
+           C180,290 320,340 480,280 
+           C600,240 720,290 850,220 
+           L850,210 L870,210 L875,195 L885,195 L890,210 L940,210 L945,190 L960,190 L965,210 L1020,210 
+           C1150,260 1280,220 1420,300 
+           C1560,370 1740,270 1920,330 
+           L1920,600 L0,600 Z" 
+        fill="url(#ridgeGrad)" />
+
+  <!-- Second soft background ridge layer -->
+  <path d="M0,420 
+           C220,390 410,430 640,380 
+           C850,330 1050,420 1250,360 
+           C1480,300 1700,430 1920,390 
+           L1920,600 L0,600 Z" 
+        fill="#250F11" opacity="0.6" />
+</svg>
+

@@ -1,0 +1,23 @@
+:root {
+  --saffron: #FF9933;
+  --saffron-glow: rgba(255, 153, 51, 0.5);
+  --ember: #E2552B;
+  --rose-mist: #E8B4B8;
+  --gold: #D4AF37;
+  --gold-deep: #8F6B14;
+  --gold-light: #F7E27A;
+  --maroon: #4A0D0D;
+  --blood: #8B1A1A;
+  --choco: #1A0F0A;
+  --indigo: #1C1233;
+  --charcoal: #0D0A08;
+  --ivory: #F5ECD7;
+  --steel: #8E8A86;
+  --steel-dark: #3F3C39;
+  
+  --gold-gradient: linear-gradient(135deg, #8F6B14 0%, #D4AF37 28%, #F7E27A 50%, #D4AF37 72%, #8F6B14 100%);
+  --gold-text-gradient: linear-gradient(180deg, #FFFFFF 0%, #F5ECD7 30%, #D4AF37 70%, #AA8018 100%);
+  --metal-plate-gradient: linear-gradient(180deg, #B9B5B0 0%, #6E6A66 50%, #4A4643 51%, #A19D98 100%);
+  --saffron-sky-gradient: linear-gradient(180deg, #FF9933 0%, #E2552B 50%, #E8B4B8 85%, #1A0F0A 100%);
+}
+

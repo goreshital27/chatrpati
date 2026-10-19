@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 700" preserveAspectRatio="none">
+  <defs>
+    <!-- Teal-Gold rim light filter -->
+    <filter id="rimGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="-2" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.45" />
+      <feDropShadow dx="-1" dy="-1" stdDeviation="4" flood-color="#38BDF8" flood-opacity="0.3" />
+    </filter>
+    <linearGradient id="rockGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#120607" />
+      <stop offset="100%" stop-color="#050202" />
+    </linearGradient>
+    <linearGradient id="flagHeroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="50%" stop-color="#E2552B" />
+      <stop offset="100%" stop-color="#8F1414" />
+    </linearGradient>
+  </defs>
+
+  <!-- Foreground Sahyadri Cliff Plate -->
+  <path d="M0,480 
+           C280,440 500,470 750,420 
+           C920,385 1100,430 1340,390 
+           C1560,350 1750,440 1920,400 
+           L1920,700 L0,700 Z" 
+        fill="url(#rockGrad)" />
+
+  <g id="hero-silhouettes" filter="url(#rimGlow)">
+    <!-- ============================================== -->
+    <!-- CHHATRAPATI SHIVAJI MAHARAJ ON ROYAL STEED (Center-Right: x: 960 to 1250) -->
+    <!-- ============================================== -->
+    
+    <!-- Horse Body, Legs, Head -->
+    <!-- Rear Left Leg -->
+    <path d="M980,410 C970,440 965,480 970,520 L990,520 C985,480 990,440 1005,420 Z" fill="#0A0405" />
+    <!-- Rear Right Leg (Standing solid) -->
+    <path d="M1010,415 C1015,450 1010,490 1020,530 L1040,530 C1035,490 1030,450 1035,420 Z" fill="#0D0506" />
+    <!-- Front Left Leg (Stepping forward boldly) -->
+    <path d="M1150,420 C1165,445 1175,475 1170,510 L1190,510 C1195,475 1185,445 1170,415 Z" fill="#0A0405" />
+    <!-- Front Right Leg (Raised bent knee in majestic stance) -->
+    <path d="M1180,410 C1200,425 1220,440 1215,465 C1210,480 1200,495 1195,515 L1215,515 C1225,495 1235,475 1230,455 C1225,430 1205,410 1190,405 Z" fill="#0D0506" />
+    <!-- Horse Torso and Flanks -->
+    <ellipse cx="1090" cy="405" rx="115" ry="55" fill="#0D0506" />
+    <!-- Horse Tail (Majestic flowing) -->
+    <path d="M975,385 C950,410 930,460 945,510 C955,470 965,430 985,395 Z" fill="#0D0506" />
+    <!-- Horse Neck arching upward -->
+    <path d="M1160,385 C1180,340 1190,300 1210,265 C1225,285 1220,330 1200,375 Z" fill="#0D0506" />
+    <!-- Horse Head & Ears -->
+    <path d="M1205,270 L1235,250 C1245,260 1255,275 1250,290 C1240,300 1225,300 1210,285 Z" fill="#0D0506" />
+    <polygon points="1215,260 1218,245 1225,255" fill="#0D0506" />
+    <!-- Horse Bridal and gold ornaments -->
+    <circle cx="1232" cy="270" r="3" fill="#D4AF37" />
+    <line x1="1232" y1="270" x2="1140" y2="330" stroke="#D4AF37" stroke-width="1.5" opacity="0.8" />
+
+    <!-- Saddle and Royal Cloth (Jhool) -->
+    <path d="M1050,365 C1080,360 1120,360 1145,370 L1150,410 C1120,418 1070,418 1045,410 Z" fill="#4A0D0D" stroke="#D4AF37" stroke-width="1.5" />
+
+    <!-- CHHATRAPATI SHIVAJI MAHARAJ SILHOUETTE -->
+    <!-- Royal Robes & Torso -->
+    <path d="M1075,370 C1070,330 1080,280 1105,255 C1130,260 1145,290 1140,370 Z" fill="#0A0405" />
+    <!-- Royal Maratha Pagadi (Turban) with Jigah / Kalgi (Royal feather ornament) -->
+    <ellipse cx="1110" cy="240" rx="16" ry="12" fill="#0A0405" />
+    <!-- Pagadi Tail (Shela) -->
+    <path d="M1095,245 C1080,260 1075,290 1070,320" stroke="#0A0405" stroke-width="6" fill="none" />
+    <!-- Jigah / Kalgi crest pointing upward with gold glow -->
+    <path d="M1115,230 Q1120,210 1128,198 Q1120,215 1118,230 Z" fill="#D4AF37" />
+    <!-- Royal Profile (Beard, Mustache, Nose) -->
+    <path d="M1122,238 C1130,242 1132,246 1128,252 C1124,258 1115,260 1110,260" fill="#0A0405" />
+
+    <!-- Right Arm holding the Bhavani Sword (pointing forward & upward) -->
+    <!-- Upper Arm -->
+    <path d="M1125,275 C1145,265 1170,250 1190,235" stroke="#0A0405" stroke-width="10" stroke-linecap="round" fill="none" />
+    <!-- Forearm -->
+    <path d="M1190,235 C1210,215 1225,195 1240,175" stroke="#0A0405" stroke-width="8" stroke-linecap="round" fill="none" />
+    <!-- Hand -->
+    <circle cx="1242" cy="172" r="5" fill="#0A0405" />
+    <!-- Bhavani Sword (Straight curved blade with gold hilt) -->
+    <!-- Hilt & Guard -->
+    <rect x="1235" y="170" width="16" height="5" rx="2" fill="#D4AF37" transform="rotate(-40 1242 172)" />
+    <!-- Blade slicing high into the sunset sky -->
+    <path d="M1245,168 L1335,80 L1342,84 L1250,174 Z" fill="#E2E8F0" stroke="#D4AF37" stroke-width="1" />
+    <polygon points="1335,80 1345,72 1342,84" fill="#F7E27A" />
+
+    <!-- Left Arm holding reins -->
+    <path d="M1105,280 C1115,305 1125,325 1140,330" stroke="#0A0405" stroke-width="9" stroke-linecap="round" fill="none" />
+
+    <!-- ============================================== -->
+    <!-- MAVLA 1: ROYAL STANDARD BEARER WITH BHAGWA FLAG (Left: x: 800 to 920) -->
+    <!-- ============================================== -->
+    <line x1="860" y1="460" x2="880" y2="120" stroke="#0A0405" stroke-width="6" />
+    <polygon points="880,110 875,125 885,125" fill="#D4AF37" />
+    <!-- Huge Flowing Bhagwa Zenda (Saffron swallowtail flag) -->
+    <path d="M880,120 
+             C940,130 990,115 1040,140 
+             L1000,165 
+             L1040,185 
+             C980,175 930,190 878,180 Z" 
+          fill="url(#flagHeroGrad)" opacity="0.95" />
+
+    <!-- Standard Bearer Mavla Figure -->
+    <!-- Head with Maratha Feta -->
+    <ellipse cx="845" cy="335" rx="12" ry="10" fill="#0A0405" />
+    <!-- Body with Angarkha -->
+    <path d="M830,345 C830,380 835,420 840,460 L865,460 C860,420 855,380 855,345 Z" fill="#0A0405" />
+    <!-- Arm grasping the flagpole -->
+    <path d="M840,360 L870,330" stroke="#0A0405" stroke-width="7" stroke-linecap="round" />
+
+    <!-- ============================================== -->
+    <!-- MAVLA 2: SPEARMAN WITH SHIELD (Left flank: x: 670 to 760) -->
+    <!-- ============================================== -->
+    <!-- Spear -->
+    <line x1="710" y1="470" x2="690" y2="200" stroke="#0A0405" stroke-width="4" />
+    <polygon points="690,190 685,205 695,205" fill="#D4AF37" />
+    <!-- Shield (Round Dhal with gold boss studs) -->
+    <circle cx="735" cy="375" r="28" fill="#1A0A0B" stroke="#D4AF37" stroke-width="2" />
+    <circle cx="735" cy="375" r="5" fill="#D4AF37" />
+    <circle cx="725" cy="365" r="3" fill="#D4AF37" />
+    <circle cx="745" cy="365" r="3" fill="#D4AF37" />
+    <circle cx="725" cy="385" r="3" fill="#D4AF37" />
+    <circle cx="745" cy="385" r="3" fill="#D4AF37" />
+    <!-- Mavla Body -->
+    <ellipse cx="730" cy="330" rx="11" ry="9" fill="#0A0405" />
+    <path d="M718,340 C715,380 720,420 725,470 L745,470 C745,420 740,380 740,340 Z" fill="#0A0405" />
+
+    <!-- ============================================== -->
+    <!-- MAVLA 3: ARCHER / SPEARMAN (Right flank: x: 1350 to 1480) -->
+    <!-- ============================================== -->
+    <!-- Spear held upright -->
+    <line x1="1400" y1="460" x2="1420" y2="180" stroke="#0A0405" stroke-width="4" />
+    <polygon points="1420,170 1415,185 1425,185" fill="#D4AF37" />
+    <circle cx="1380" cy="345" rx="12" ry="10" fill="#0A0405" />
+    <path d="M1365,355 C1365,390 1370,430 1375,470 L1395,470 C1395,430 1390,390 1390,355 Z" fill="#0A0405" />
+    <path d="M1375,370 L1410,340" stroke="#0A0405" stroke-width="6" stroke-linecap="round" />
+
+    <!-- ============================================== -->
+    <!-- MAVLA 4: HORN BLOWER (TUTARI / SHING) on the far left cliff edge -->
+    <!-- ============================================== -->
+    <ellipse cx="560" cy="360" rx="10" ry="8" fill="#0A0405" />
+    <path d="M550,370 C548,405 550,440 555,480 L572,480 C570,440 568,405 568,370 Z" fill="#0A0405" />
+    <!-- Traditional Curved Tutari / Horn -->
+    <path d="M565,365 C580,355 605,340 625,310 C630,305 635,300 645,295" stroke="#D4AF37" stroke-width="5" fill="none" stroke-linecap="round" />
+    <polygon points="645,285 640,305 655,295" fill="#D4AF37" />
+  </g>
+</svg>
+

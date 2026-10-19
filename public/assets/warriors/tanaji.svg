@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <radialGradient id="wGlow_tanaji" cx="50%" cy="38%" r="55%">
+      <stop offset="0%" stop-color="#3B0C0C" />
+      <stop offset="60%" stop-color="#1A0505" />
+      <stop offset="100%" stop-color="#080303" />
+    </radialGradient>
+    <linearGradient id="goldW_tanaji" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E27A" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#8F6B14" />
+    </linearGradient>
+    <linearGradient id="tealRim_tanaji" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#FF9933" />
+    </linearGradient>
+    <filter id="warriorFilter_tanaji">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#38BDF8" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="2" stdDeviation="12" flood-color="#D4AF37" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#wGlow_tanaji)" />
+
+  <!-- Aura Circles -->
+  <circle cx="300" cy="270" r="145" fill="none" stroke="url(#tealRim_tanaji)" stroke-width="1.5" stroke-dasharray="10 6" opacity="0.4" />
+  <circle cx="300" cy="270" r="160" fill="none" stroke="url(#goldW_tanaji)" stroke-width="1" opacity="0.3" />
+
+  <!-- Warrior Silhouette Graphic -->
+  <g filter="url(#warriorFilter_tanaji)">
+    <!-- Spear or Sword held high on flank -->
+    <line x1="430" y1="80" x2="380" y2="480" stroke="#0A0404" stroke-width="6" />
+    <line x1="430" y1="80" x2="380" y2="480" stroke="url(#tealRim_tanaji)" stroke-width="2" />
+    <polygon points="430,70 422,95 438,95" fill="#F7E27A" />
+
+    <!-- Turban Pagadi -->
+    <ellipse cx="300" cy="205" rx="52" ry="42" fill="#140606" stroke="url(#tealRim_tanaji)" stroke-width="2.5" />
+    <path d="M260,205 C260,160 340,160 340,205 Z" fill="#240A0A" stroke="url(#tealRim_tanaji)" stroke-width="2.5" />
+    <polygon points="300,145 292,172 308,172" fill="#F7E27A" />
+
+    <!-- Head Profile & Beard -->
+    <ellipse cx="300" cy="225" rx="30" ry="34" fill="#0A0404" />
+    <path d="M285,245 C295,260 305,260 315,245" stroke="#D4AF37" stroke-width="2" fill="none" />
+
+    <!-- Body Armor & Shoulders -->
+    <path d="M190,380 C205,280 270,260 300,260 C330,260 395,280 410,380 C410,440 380,520 360,560 L240,560 C220,520 190,440 190,380 Z" 
+          fill="#0D0404" stroke="url(#tealRim_tanaji)" stroke-width="2.5" />
+
+    <!-- Round Maratha Shield (Dhal) on Left Breast -->
+    <circle cx="250" cy="390" r="50" fill="#1A0707" stroke="url(#goldW_tanaji)" stroke-width="3" />
+    <circle cx="250" cy="390" r="8" fill="#F7E27A" />
+    <circle cx="236" cy="376" r="4" fill="#D4AF37" />
+    <circle cx="264" cy="376" r="4" fill="#D4AF37" />
+    <circle cx="236" cy="404" r="4" fill="#D4AF37" />
+    <circle cx="264" cy="404" r="4" fill="#D4AF37" />
+  </g>
+
+  <!-- Bottom Title Plate -->
+  <rect y="560" width="600" height="190" fill="#0A0404" opacity="0.96" />
+  <line x1="60" y1="560" x2="540" y2="560" stroke="url(#goldW_tanaji)" stroke-width="2" />
+
+  <g font-family="'Cinzel Decorative', serif" text-anchor="middle">
+    <text x="300" y="620" fill="url(#goldW_tanaji)" font-size="26" font-weight="900" letter-spacing="2">TANAJI MALUSARE</text>
+  </g>
+  <g font-family="'Yatra One', 'Mukta', serif" text-anchor="middle">
+    <text x="300" y="660" fill="#F5ECD7" font-size="22" font-weight="700">सुभेदार तानाजी मालुसरे</text>
+  </g>
+  <g font-family="'Mukta', sans-serif" text-anchor="middle">
+    <text x="300" y="700" fill="#FF9933" font-size="15" letter-spacing="3">LION OF SINHAGAD • SINHAGAD 1670</text>
+  </g>
+</svg>
