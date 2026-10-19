@@ -45,3 +45,85 @@
   }
 }
 
+/* ==========================================================================
+   Devanagari Shaping & Typography Integrity (Strict Rules)
+   - Zero letter-spacing to avoid breaking ligatures / conjuncts
+   - No uppercase / capitalize transform
+   - Standard OpenType ligation (liga, clig, kern)
+   - optimizeLegibility rendering
+   ========================================================================== */
+:lang(mr),
+[lang="mr"],
+.devanagari-text {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  font-kerning: normal;
+  font-feature-settings: "liga" 1, "clig" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.font-yatra,
+.font-tiro,
+.font-devanagari {
+  font-kerning: normal;
+  font-feature-settings: "liga" 1, "clig" 1, "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+[lang="mr"] .font-yatra,
+[lang="mr"] .font-tiro,
+[lang="mr"] .font-devanagari,
+[lang="mr"].font-yatra,
+[lang="mr"].font-tiro,
+[lang="mr"].font-devanagari {
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* Continuous Metallic Gold Gradient applied to whole heading elements */
+.hero-gold-gradient {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF2D6 28%, #D4AF37 68%, #997315 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Word-level reveal animation: fade + rise + slight blur-out */
+@keyframes wordReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-word-reveal {
+  animation: wordReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes graphemeReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-grapheme-reveal {
+  animation: graphemeReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+
+

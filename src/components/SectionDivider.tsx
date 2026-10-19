@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
+import { AnimatedText } from './AnimatedText';
 
 interface SectionDividerProps {
   heading: string;
@@ -11,11 +13,14 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
   heading,
   subheading,
   badge,
-  alignment = 'center'
+  alignment = 'center',
 }) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const { language } = useLanguage();
   const [hasRevealed, setHasRevealed] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Detect Devanagari script in heading
+  const isDevanagari = /[\u0900-\u097F]/.test(heading) || language === 'mr';
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,7 +29,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
           setHasRevealed(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     if (containerRef.current) {
@@ -34,22 +39,6 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
     return () => observer.disconnect();
   }, [hasRevealed]);
 
-  useEffect(() => {
-    if (!hasRevealed) return;
-
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex <= heading.length) {
-        setDisplayedText(heading.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 45);
-
-    return () => clearInterval(interval);
-  }, [hasRevealed, heading]);
-
   return (
     <div
       ref={containerRef}
@@ -58,7 +47,13 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
       }`}
     >
       {badge && (
-        <span className="mb-2 px-3 py-0.5 text-[11px] font-bold tracking-widest uppercase text-saffron bg-saffron/10 border border-saffron/30 rounded-full font-mukta">
+        <span
+          lang={isDevanagari ? 'mr' : undefined}
+          className={`mb-2 px-3 py-0.5 text-[11px] font-bold text-saffron bg-saffron/10 border border-saffron/30 rounded-full font-mukta ${
+            isDevanagari ? 'tracking-normal' : 'tracking-widest uppercase'
+          }`}
+          style={{ letterSpacing: isDevanagari ? 0 : undefined, textTransform: isDevanagari ? 'none' : undefined }}
+        >
           {badge}
         </span>
       )}
@@ -72,10 +67,28 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
         <span className="text-[#D4AF37] text-xs sm:text-sm animate-pulse">◆</span>
 
         {/* Main Section Title */}
-        <h2 className="font-cinzel text-xl sm:text-3xl md:text-4xl font-extrabold tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-ivory to-gold-light px-2 min-h-[1.5em] flex items-center">
-          {displayedText}
-          {displayedText.length < heading.length && (
-            <span className="inline-block w-1.5 h-6 bg-saffron ml-1 animate-ping" />
+        <h2
+          lang={isDevanagari ? 'mr' : 'en'}
+          className={`${
+            isDevanagari ? 'font-yatra text-2xl sm:text-3xl md:text-4xl' : 'font-cinzel text-xl sm:text-3xl md:text-4xl uppercase tracking-widest'
+          } font-extrabold hero-gold-gradient px-2 min-h-[1.5em] flex items-center`}
+          style={{
+            letterSpacing: isDevanagari ? 0 : undefined,
+            textTransform: isDevanagari ? 'none' : undefined,
+            lineHeight: 1.35,
+            fontFeatureSettings: '"liga" 1, "clig" 1, "kern" 1',
+            fontKerning: 'normal',
+            textRendering: 'optimizeLegibility',
+          }}
+        >
+          {hasRevealed ? (
+            <AnimatedText
+              text={heading}
+              lang={isDevanagari ? 'mr' : 'en'}
+              stagger={0.1}
+            />
+          ) : (
+            <span className="opacity-0">{heading}</span>
           )}
         </h2>
 
@@ -87,11 +100,17 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
       </div>
 
       {subheading && (
-        <p className="mt-2 text-sm sm:text-base text-ivory/70 max-w-2xl font-mukta font-light">
+        <p
+          lang={isDevanagari ? 'mr' : undefined}
+          className="mt-2 text-sm sm:text-base text-ivory/70 max-w-2xl font-mukta font-light"
+          style={{
+            letterSpacing: isDevanagari ? 0 : undefined,
+            lineHeight: 1.45,
+          }}
+        >
           {subheading}
         </p>
       )}
     </div>
   );
 };
-

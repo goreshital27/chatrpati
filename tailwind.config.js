@@ -63,9 +63,10 @@ export default {
       fontFamily: {
         cinzelDec: ['"Cinzel Decorative"', 'Cinzel', 'serif'],
         cinzel: ['Cinzel', 'serif'],
-        yatra: ['"Yatra One"', '"Tiro Devanagari Marathi"', 'serif'],
-        tiro: ['"Tiro Devanagari Marathi"', 'serif'],
-        mukta: ['Mukta', 'Inter', 'system-ui', 'sans-serif'],
+        yatra: ['"Yatra One"', '"Tiro Devanagari Marathi"', '"Noto Sans Devanagari"', 'serif'],
+        tiro: ['"Tiro Devanagari Marathi"', '"Noto Sans Devanagari"', '"Yatra One"', 'serif'],
+        devanagari: ['"Tiro Devanagari Marathi"', '"Noto Sans Devanagari"', '"Yatra One"', 'serif'],
+        mukta: ['Mukta', '"Noto Sans Devanagari"', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 25px rgba(212, 175, 55, 0.45)',

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { ChevronDown, Sparkles, Compass } from 'lucide-react';
+import { AnimatedText } from '../components/AnimatedText';
 
 export const HeroSection: React.FC = () => {
   const { language, t } = useLanguage();
@@ -91,10 +92,6 @@ export const HeroSection: React.FC = () => {
   const midHillOffset = scrollY * 0.38;
   const foregroundOffset = scrollY * 0.5;
 
-  const titleWords =
-    language === 'mr'
-      ? ['छ', 'त्र', 'प', 'ती', ' ', 'शि', 'वा', 'जी', ' ', 'म', 'हा', 'रा', 'ज']
-      : ['C', 'H', 'H', 'A', 'T', 'R', 'A', 'P', 'A', 'T', 'I', ' ', 'S', 'H', 'I', 'V', 'A', 'J', 'I'];
 
   return (
     <section
@@ -205,35 +202,61 @@ export const HeroSection: React.FC = () => {
       {/* Center Cinematic Typography & Hero Title */}
       <div className="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4 pt-24 pb-36 max-w-5xl mx-auto">
         {/* Top Auspicious Sanskrit Banner */}
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-black/40 backdrop-blur-md border border-gold/50 shadow-gold-glow mb-4 sm:mb-6 animate-fadeIn">
-          <Sparkles className="w-3.5 h-3.5 text-saffron" />
-          <span className="font-yatra text-xs sm:text-sm text-gold tracking-widest">
-            ॥ प्रतिपच्चन्द्रलेखेव वर्धिष्णुर्विश्ववन्दिता ॥
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/45 backdrop-blur-md border border-gold/50 shadow-gold-glow mb-4 sm:mb-6 animate-fadeIn">
+          <Sparkles className="w-3.5 h-3.5 text-saffron shrink-0" />
+          <span
+            lang="mr"
+            className="font-tiro text-xs sm:text-sm text-gold whitespace-nowrap"
+            style={{
+              letterSpacing: 0,
+              textTransform: 'none',
+              fontFeatureSettings: '"liga" 1, "clig" 1, "kern" 1',
+              fontKerning: 'normal',
+              textRendering: 'optimizeLegibility',
+            }}
+          >
+            प्रतिपच्चन्द्रलेखेव वर्धिष्णुर्विश्ववन्दिता
           </span>
-          <Sparkles className="w-3.5 h-3.5 text-saffron" />
+          <Sparkles className="w-3.5 h-3.5 text-saffron shrink-0" />
         </div>
 
-        {/* Letter-by-Letter Hero Display Title */}
-        <h1 className="font-yatra text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-wider drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)] my-2">
-          {titleWords.map((char, index) => (
-            <span
-              key={index}
-              className="inline-block transition-transform duration-300 hover:scale-115 hover:text-white"
-              style={{
-                background: 'linear-gradient(180deg, #FFFFFF 0%, #FFF2D6 30%, #D4AF37 70%, #997315 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                animation: `fadeInUp 0.8s ease-out ${index * 0.04}s both`,
-              }}
-            >
-              {char === ' ' ? '\u00A0' : char}
-            </span>
-          ))}
+        {/* Hero Display Title (Whole heading gradient + Word-level reveal animation) */}
+        <h1
+          lang={language}
+          className="font-yatra hero-gold-gradient font-black drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)] my-2"
+          style={{
+            fontSize: 'clamp(2.5rem, 7vw, 6.5rem)',
+            lineHeight: 1.35,
+            textWrap: 'balance',
+            letterSpacing: 0,
+            textTransform: 'none',
+            fontFeatureSettings: '"liga" 1, "clig" 1, "kern" 1',
+            fontKerning: 'normal',
+            textRendering: 'optimizeLegibility',
+          }}
+        >
+          <AnimatedText
+            text={language === 'mr' ? 'छत्रपती शिवाजी महाराज' : 'CHHATRAPATI SHIVAJI MAHARAJ'}
+            lang={language}
+            mobileStackWords={true}
+            stagger={0.14}
+            delay={0.1}
+          />
         </h1>
 
         {/* Tagline */}
-        <p className="mt-2 sm:mt-4 font-mukta text-sm sm:text-xl md:text-2xl text-ivory/90 font-medium tracking-wide max-w-3xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-          {t.hero.tagline}
+        <p
+          lang={language}
+          className="mt-2 sm:mt-4 font-mukta text-sm sm:text-xl md:text-2xl text-ivory/90 font-medium max-w-3xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]"
+          style={{
+            letterSpacing: language === 'mr' ? 0 : undefined,
+            textTransform: 'none',
+            lineHeight: 1.4,
+          }}
+        >
+          {language === 'mr'
+            ? 'हिंदवी स्वराज्याचे शिल्पकार • दुर्गपती • छत्रपती'
+            : t.hero.tagline}
         </p>
 
         {/* Action Buttons */}
