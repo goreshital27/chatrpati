@@ -94,7 +94,11 @@ export const AchievementsSection: React.FC = () => {
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="font-yatra text-lg font-bold text-ivory mt-2 mb-1">
+                  <h3
+                    lang={language === 'mr' ? 'mr' : undefined}
+                    className="font-yatra text-lg font-bold text-ivory mt-2 mb-1"
+                    style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                  >
                     {language === 'mr' ? item.title.mr : item.title.en}
                   </h3>
                   <p className="font-mukta text-xs text-saffron font-semibold">

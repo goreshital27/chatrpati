@@ -30,10 +30,18 @@ export const NavyAdminSection: React.FC = () => {
                     <Anchor className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-yatra text-2xl font-bold text-white">
+                    <h3
+                      lang={language === 'mr' ? 'mr' : undefined}
+                      className="font-yatra text-2xl font-bold text-white"
+                      style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                    >
                       {t.navyAdmin.navyTitle}
                     </h3>
-                    <p className="text-xs text-sky-300/70 font-mukta uppercase tracking-wider">
+                    <p
+                      lang="mr"
+                      className="text-xs text-sky-300/70 font-mukta"
+                      style={{ letterSpacing: 0, textTransform: 'none' }}
+                    >
                       अरबी समुद्रावरील सार्वभौमत्व • सिंधुदुर्ग व विजयदुर्ग
                     </p>
                   </div>
@@ -55,12 +63,22 @@ export const NavyAdminSection: React.FC = () => {
                     className="p-4 rounded-xl bg-black/40 border border-sky-400/20 hover:border-sky-400/50 transition-colors"
                   >
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-sky-950 text-sky-300 font-mono">
+                      <span
+                        lang={language === 'mr' ? 'mr' : undefined}
+                        className={`text-[10px] font-bold px-2 py-0.5 rounded bg-sky-950 text-sky-300 font-mono ${
+                          language === 'mr' ? 'tracking-normal' : 'uppercase tracking-widest'
+                        }`}
+                        style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+                      >
                         {language === 'mr' ? policy.badge.mr : policy.badge.en}
                       </span>
                       <Award className="w-4 h-4 text-sky-400" />
                     </div>
-                    <h4 className="font-yatra text-base font-bold text-sky-200 mt-1">
+                    <h4
+                      lang={language === 'mr' ? 'mr' : undefined}
+                      className="font-yatra text-base font-bold text-sky-200 mt-1"
+                      style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                    >
                       {language === 'mr' ? policy.title.mr : policy.title.en}
                     </h4>
                     <p className="text-xs text-ivory/70 font-mukta leading-relaxed mt-1">
@@ -88,10 +106,18 @@ export const NavyAdminSection: React.FC = () => {
                     <Heart className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-yatra text-2xl font-bold text-white">
+                    <h3
+                      lang={language === 'mr' ? 'mr' : undefined}
+                      className="font-yatra text-2xl font-bold text-white"
+                      style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                    >
                       {t.navyAdmin.adminTitle}
                     </h3>
-                    <p className="text-xs text-gold/70 font-mukta uppercase tracking-wider">
+                    <p
+                      lang="mr"
+                      className="text-xs text-gold/70 font-mukta"
+                      style={{ letterSpacing: 0, textTransform: 'none' }}
+                    >
                       रयतेचे कल्याण • निष्पक्ष न्याय • महिलांचा सन्मान
                     </p>
                   </div>

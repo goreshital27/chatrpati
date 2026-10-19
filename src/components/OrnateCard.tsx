@@ -127,11 +127,25 @@ export const OrnateCard: React.FC<OrnateCardProps> = ({
 
           {/* 4. Title Section on Ivory Accent Plate */}
           <div className="p-4 bg-gradient-to-b from-[#14100E] to-[#1A1411] border-t border-gold/30">
-            <h3 className="font-cinzel text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold line-clamp-1">
+            <h3
+              lang={/[\u0900-\u097F]/.test(title) ? 'mr' : undefined}
+              className={`${
+                /[\u0900-\u097F]/.test(title) ? 'font-yatra' : 'font-cinzel'
+              } text-lg sm:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold line-clamp-1`}
+              style={{
+                letterSpacing: /[\u0900-\u097F]/.test(title) ? 0 : undefined,
+                textTransform: /[\u0900-\u097F]/.test(title) ? 'none' : undefined,
+                lineHeight: 1.35,
+              }}
+            >
               {title}
             </h3>
             {titleMr && (
-              <p className="font-yatra text-xs sm:text-sm text-saffron mt-0.5 line-clamp-1">
+              <p
+                lang="mr"
+                className="font-yatra text-xs sm:text-sm text-saffron mt-0.5 line-clamp-1"
+                style={{ letterSpacing: 0, textTransform: 'none', lineHeight: 1.35 }}
+              >
                 {titleMr}
               </p>
             )}

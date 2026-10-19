@@ -71,7 +71,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
           lang={isDevanagari ? 'mr' : 'en'}
           className={`${
             isDevanagari ? 'font-yatra text-2xl sm:text-3xl md:text-4xl' : 'font-cinzel text-xl sm:text-3xl md:text-4xl uppercase tracking-widest'
-          } font-extrabold hero-gold-gradient px-2 min-h-[1.5em] flex items-center`}
+          } font-extrabold px-2 min-h-[1.5em] flex items-center`}
           style={{
             letterSpacing: isDevanagari ? 0 : undefined,
             textTransform: isDevanagari ? 'none' : undefined,
@@ -86,6 +86,7 @@ export const SectionDivider: React.FC<SectionDividerProps> = ({
               text={heading}
               lang={isDevanagari ? 'mr' : 'en'}
               stagger={0.1}
+              wordClassName="hero-gold-gradient"
             />
           ) : (
             <span className="opacity-0">{heading}</span>

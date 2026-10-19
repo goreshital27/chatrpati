@@ -88,10 +88,18 @@ export const Navbar: React.FC = () => {
               />
             </div>
             <div className="flex flex-col text-left">
-              <span className="font-yatra text-sm sm:text-base font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron group-hover:from-white group-hover:to-gold transition-colors">
+              <span
+                lang={language}
+                className="font-tiro text-sm sm:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron group-hover:from-white group-hover:to-gold transition-colors"
+                style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+              >
                 {language === 'mr' ? 'शिवराज्य' : 'SWARAJYA'}
               </span>
-              <span className="text-[10px] text-ivory/60 font-mukta uppercase tracking-widest hidden sm:block">
+              <span
+                lang="mr"
+                className="text-[10px] text-ivory/60 font-mukta hidden sm:block"
+                style={{ letterSpacing: 0, textTransform: 'none' }}
+              >
                 १६७४ • हिंदवी स्वराज्य
               </span>
             </div>
@@ -122,11 +130,14 @@ export const Navbar: React.FC = () => {
                       e.preventDefault();
                       handleNavClick(item.href);
                     }}
-                    className={`relative block px-3 py-1.5 text-xs font-semibold tracking-wider transition-all duration-300 rounded-md uppercase font-mukta ${
+                    className={`relative block px-3 py-1.5 text-xs font-semibold transition-all duration-300 rounded-md font-mukta ${
+                      language === 'mr' ? 'tracking-normal normal-case' : 'tracking-wider uppercase'
+                    } ${
                       isActive
                         ? 'text-saffron font-bold'
                         : 'text-ivory/80 hover:text-white'
                     }`}
+                    style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
                   >
                     {item.label}
 
@@ -188,8 +199,10 @@ export const Navbar: React.FC = () => {
           <div className="space-y-6">
             <div className="border-b border-gold/30 pb-4 flex items-center justify-between">
               <div>
-                <h3 className="font-yatra text-xl text-saffron">छत्रपती शिवाजी महाराज</h3>
-                <p className="font-mukta text-xs text-ivory/70 tracking-widest uppercase">
+                <h3 lang="mr" className="font-yatra text-xl text-saffron" style={{ letterSpacing: 0, textTransform: 'none' }}>
+                  छत्रपती शिवाजी महाराज
+                </h3>
+                <p lang="mr" className="font-mukta text-xs text-ivory/70" style={{ letterSpacing: 0, textTransform: 'none' }}>
                   हिंदवी स्वराज्य महामंदिर
                 </p>
               </div>
@@ -247,8 +260,8 @@ export const Navbar: React.FC = () => {
           </div>
 
           <div className="pt-8 border-t border-gold/20 flex flex-col gap-3 text-center">
-            <p className="font-yatra text-gold text-lg">॥ जय भवानी • जय शिवाजी ॥</p>
-            <p className="text-xs text-ivory/50 font-mukta">
+            <p lang="mr" className="font-yatra text-gold text-lg" style={{ letterSpacing: 0, textTransform: 'none' }}>॥ जय भवानी • जय शिवाजी ॥</p>
+            <p lang="mr" className="text-xs text-ivory/50 font-mukta" style={{ letterSpacing: 0, textTransform: 'none' }}>
               ३५० वर्षे सार्वभौम राज्याभिषेक • १६७४ - २०२४
             </p>
           </div>

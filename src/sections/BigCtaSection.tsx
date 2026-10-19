@@ -25,7 +25,17 @@ export const BigCtaSection: React.FC = () => {
         </div>
 
         {/* Huge Metallic Gradient Display Title "स्वराज्य" */}
-        <h2 className="font-yatra text-6xl sm:text-8xl md:text-9xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white via-[#F5ECD7] to-[#D4AF37] drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] my-2">
+        <h2
+          lang={language}
+          className={`${
+            language === 'mr' ? 'font-yatra tracking-normal' : 'font-cinzel tracking-wider uppercase'
+          } text-6xl sm:text-8xl md:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-[#F5ECD7] to-[#D4AF37] drop-shadow-[0_10px_35px_rgba(0,0,0,0.9)] my-2`}
+          style={{
+            letterSpacing: language === 'mr' ? 0 : undefined,
+            textTransform: language === 'mr' ? 'none' : undefined,
+            lineHeight: 1.35,
+          }}
+        >
           {t.cta.title}
         </h2>
 
@@ -43,7 +53,10 @@ export const BigCtaSection: React.FC = () => {
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/timeline"
-            className="group px-10 py-4 text-sm sm:text-base font-extrabold tracking-widest uppercase text-[#0D0A08] bg-white hover:bg-gradient-to-r hover:from-white hover:to-saffron transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(255,255,255,0.4)] flex items-center gap-3 font-mukta"
+            className={`group px-10 py-4 text-sm sm:text-base font-extrabold text-[#0D0A08] bg-white hover:bg-gradient-to-r hover:from-white hover:to-saffron transition-all duration-300 shadow-[0_10px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(255,255,255,0.4)] flex items-center gap-3 font-mukta ${
+              language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+            }`}
+            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
           >
             <Shield className="w-5 h-5 text-maroon group-hover:scale-110 transition-transform" />
             <span>{t.cta.joinBtn}</span>
@@ -51,7 +64,10 @@ export const BigCtaSection: React.FC = () => {
 
           <Link
             to="/forts"
-            className="px-8 py-4 text-sm sm:text-base font-extrabold tracking-widest uppercase text-ivory bg-black/60 hover:bg-black/80 border border-gold/70 hover:border-saffron transition-all duration-300 shadow-lg flex items-center gap-2 font-mukta"
+            className={`px-8 py-4 text-sm sm:text-base font-extrabold text-ivory bg-black/60 hover:bg-black/80 border border-gold/70 hover:border-saffron transition-all duration-300 shadow-lg flex items-center gap-2 font-mukta ${
+              language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+            }`}
+            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
           >
             <Compass className="w-5 h-5 text-gold" />
             <span>{language === 'mr' ? 'दुर्गदर्शन करा' : 'EXPLORE FORTS'}</span>

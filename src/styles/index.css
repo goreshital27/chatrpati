@@ -89,6 +89,14 @@
   color: transparent;
 }
 
+.word-gradient-inherit {
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 /* Word-level reveal animation: fade + rise + slight blur-out */
 @keyframes wordReveal {
   0% {

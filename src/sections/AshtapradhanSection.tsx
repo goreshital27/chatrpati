@@ -172,11 +172,13 @@ export const AshtapradhanSection: React.FC = () => {
 
                   {/* Node Label Below */}
                   <span
-                    className={`mt-1.5 px-2 py-0.5 rounded-md text-[11px] font-bold font-mukta tracking-wide whitespace-nowrap transition-colors ${
+                    lang={language === 'mr' ? 'mr' : undefined}
+                    className={`mt-1.5 px-2 py-0.5 rounded-md text-[11px] font-bold font-mukta whitespace-nowrap transition-colors ${
                       isSelected
                         ? 'bg-saffron text-charcoal shadow-md font-black'
                         : 'bg-black/70 text-ivory/80 group-hover:text-saffron border border-white/10'
                     }`}
+                    style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
                   >
                     {language === 'mr' ? member.titleDevanagari.split(' ')[0] : member.titleEnglish.split(' ')[0]}
                   </span>
@@ -195,7 +197,11 @@ export const AshtapradhanSection: React.FC = () => {
                     <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-saffron/15 border border-saffron/40 text-saffron font-mukta">
                       RANK #{selectedMember.order} • {selectedMember.historicalOffice}
                     </span>
-                    <h3 className="font-yatra text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold mt-1">
+                    <h3
+                      lang="mr"
+                      className="font-yatra text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold mt-1"
+                      style={{ letterSpacing: 0, textTransform: 'none', lineHeight: 1.35 }}
+                    >
                       {selectedMember.titleDevanagari}
                     </h3>
                     <p className="font-cinzel text-xs sm:text-sm text-gold/90 tracking-wider">

@@ -52,12 +52,22 @@ export const QuotesSection: React.FC = () => {
 
           {/* Quote Body */}
           <div className="relative z-10 min-h-[160px] flex flex-col justify-center items-center">
-            <p className="font-yatra text-xl sm:text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold leading-relaxed font-normal">
+            <p
+              lang={language}
+              className="font-yatra text-xl sm:text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold leading-relaxed font-normal"
+              style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+            >
               "{language === 'mr' ? activeQuote.quoteMr : activeQuote.quoteEn}"
             </p>
 
             {/* Author */}
-            <h4 className="mt-6 font-cinzel text-base sm:text-lg font-bold text-saffron tracking-wider">
+            <h4
+              lang={language}
+              className={`mt-6 ${
+                language === 'mr' ? 'font-yatra tracking-normal' : 'font-cinzel tracking-wider'
+              } text-base sm:text-lg font-bold text-saffron`}
+              style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+            >
               — {language === 'mr' ? activeQuote.authorMr : activeQuote.author}
             </h4>
 

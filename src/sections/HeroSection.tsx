@@ -223,7 +223,7 @@ export const HeroSection: React.FC = () => {
         {/* Hero Display Title (Whole heading gradient + Word-level reveal animation) */}
         <h1
           lang={language}
-          className="font-yatra hero-gold-gradient font-black drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)] my-2"
+          className={`${language === 'mr' ? 'font-tiro font-bold' : 'font-cinzel font-black'} drop-shadow-[0_4px_25px_rgba(0,0,0,0.9)] my-2`}
           style={{
             fontSize: 'clamp(2.5rem, 7vw, 6.5rem)',
             lineHeight: 1.35,
@@ -241,6 +241,7 @@ export const HeroSection: React.FC = () => {
             mobileStackWords={true}
             stagger={0.14}
             delay={0.1}
+            wordClassName="hero-gold-gradient"
           />
         </h1>
 
@@ -263,7 +264,10 @@ export const HeroSection: React.FC = () => {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#itahas"
-            className="group px-6 py-3 rounded-md font-mukta text-xs sm:text-sm font-bold tracking-widest uppercase text-[#0D0A08] bg-gradient-to-r from-[#D4AF37] via-[#F7E27A] to-[#D4AF37] hover:from-white hover:to-saffron border border-gold shadow-[0_0_20px_rgba(212,175,55,0.6)] [clip-path:polygon(10px_0,100%_0,calc(100%-10px)_100%,0_100%)] transition-all duration-300 flex items-center gap-2"
+            className={`group px-6 py-3 rounded-md font-mukta text-xs sm:text-sm font-bold text-[#0D0A08] bg-gradient-to-r from-[#D4AF37] via-[#F7E27A] to-[#D4AF37] hover:from-white hover:to-saffron border border-gold shadow-[0_0_20px_rgba(212,175,55,0.6)] [clip-path:polygon(10px_0,100%_0,calc(100%-10px)_100%,0_100%)] transition-all duration-300 flex items-center gap-2 ${
+              language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+            }`}
+            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
           >
             <Compass className="w-4 h-4 text-charcoal group-hover:rotate-45 transition-transform" />
             <span>{t.hero.exploreBtn}</span>
@@ -271,7 +275,10 @@ export const HeroSection: React.FC = () => {
 
           <a
             href="#gadkille"
-            className="px-6 py-3 rounded-md font-mukta text-xs sm:text-sm font-bold tracking-widest uppercase text-ivory bg-black/60 hover:bg-maroon/70 backdrop-blur-sm border border-gold/60 hover:border-saffron shadow-lg [clip-path:polygon(0_0,calc(100%-10px)_0,100%_100%,10px_100%)] transition-all duration-300"
+            className={`px-6 py-3 rounded-md font-mukta text-xs sm:text-sm font-bold text-ivory bg-black/60 hover:bg-maroon/70 backdrop-blur-sm border border-gold/60 hover:border-saffron shadow-lg [clip-path:polygon(0_0,calc(100%-10px)_0,100%_100%,10px_100%)] transition-all duration-300 ${
+              language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+            }`}
+            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
           >
             {t.hero.watchBtn}
           </a>
@@ -280,7 +287,13 @@ export const HeroSection: React.FC = () => {
 
       {/* Bottom Scroll-Down Indicator */}
       <div className="relative z-30 pb-6 flex flex-col items-center justify-center text-center pointer-events-none">
-        <span className="text-[11px] font-bold uppercase tracking-widest text-ivory/70 font-mukta mb-1 drop-shadow-md">
+        <span
+          lang={language}
+          className={`text-[11px] font-bold text-ivory/70 font-mukta mb-1 drop-shadow-md ${
+            language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+          }`}
+          style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+        >
           {t.hero.scrollDown}
         </span>
         <ChevronDown className="w-5 h-5 text-saffron animate-bounce" />

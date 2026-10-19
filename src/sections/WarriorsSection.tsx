@@ -81,7 +81,11 @@ export const WarriorsSection: React.FC = () => {
 
                       {/* Name Plate & Role */}
                       <div className="pt-3 border-t border-gold/30 text-center">
-                        <h3 className="font-yatra text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold">
+                        <h3
+                          lang={language === 'mr' ? 'mr' : undefined}
+                          className="font-yatra text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold"
+                          style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                        >
                           {language === 'mr' ? warrior.nameMr : warrior.name}
                         </h3>
                         <p className="font-mukta text-xs text-saffron font-semibold mt-0.5">
@@ -97,17 +101,31 @@ export const WarriorsSection: React.FC = () => {
                       <div>
                         {/* Header */}
                         <div className="flex items-center justify-between border-b border-gold/30 pb-2 mb-3">
-                          <h4 className="font-yatra text-lg font-bold text-gold">
+                          <h4
+                            lang={language === 'mr' ? 'mr' : undefined}
+                            className="font-yatra text-lg font-bold text-gold"
+                            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                          >
                             {language === 'mr' ? warrior.nameMr : warrior.name}
                           </h4>
-                          <span className="text-[10px] text-ivory/60 uppercase font-mukta">
+                          <span
+                            lang="mr"
+                            className="text-[10px] text-ivory/60 font-mukta"
+                            style={{ letterSpacing: 0, textTransform: 'none' }}
+                          >
                             शौर्यगाथा
                           </span>
                         </div>
 
                         {/* One-Line Legend */}
                         <div className="mb-3">
-                          <span className="text-[11px] font-bold text-saffron uppercase tracking-widest font-mukta block mb-1">
+                          <span
+                            lang={language === 'mr' ? 'mr' : undefined}
+                            className={`text-[11px] font-bold text-saffron font-mukta block mb-1 ${
+                              language === 'mr' ? 'tracking-normal' : 'uppercase tracking-widest'
+                            }`}
+                            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+                          >
                             {language === 'mr' ? 'अमर ब्रीद व पराक्रम' : 'Legendary Creed'}
                           </span>
                           <p className="text-xs sm:text-sm text-ivory font-mukta leading-relaxed italic">

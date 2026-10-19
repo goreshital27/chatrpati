@@ -31,16 +31,26 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Salutation */}
-        <h3 className="font-yatra text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron mb-3 tracking-wide">
+        <h3
+          lang="mr"
+          className="font-yatra text-3xl sm:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron mb-3"
+          style={{ letterSpacing: 0, textTransform: 'none', lineHeight: 1.35 }}
+        >
           {t.footer.salutation}
         </h3>
 
-        <p className="font-mukta text-xs sm:text-sm text-ivory/70 max-w-xl mb-8 leading-relaxed">
+        <p
+          lang={language}
+          className="font-mukta text-xs sm:text-sm text-ivory/70 max-w-xl mb-8 leading-relaxed"
+          style={{ letterSpacing: language === 'mr' ? 0 : undefined }}
+        >
           {t.footer.rights}
         </p>
 
         {/* Navigation Quick Links */}
-        <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold uppercase tracking-widest text-ivory/80 font-mukta mb-8">
+        <div className={`flex flex-wrap items-center justify-center gap-6 text-xs font-semibold text-ivory/80 font-mukta mb-8 ${
+          language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+        }`}>
           <a href="#hero" className="hover:text-saffron transition-colors">
             {language === 'mr' ? 'मुखपृष्ठ' : 'HOME'}
           </a>

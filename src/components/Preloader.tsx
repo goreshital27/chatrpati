@@ -62,9 +62,10 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
             {/* Sanskrit text fading in */}
             <g
               fill="#F7E27A"
-              fontFamily="'Yatra One', 'Tiro Devanagari Marathi', serif"
+              fontFamily="'Tiro Devanagari Marathi', 'Noto Sans Devanagari', 'Yatra One', serif"
               textAnchor="middle"
               className="transition-opacity duration-700 delay-300"
+              style={{ letterSpacing: 0 }}
             >
               <text x="250" y="170" fontSize="26">प्रतिपच्चन्द्रलेखेव</text>
               <text x="250" y="230" fontSize="25">वर्धिष्णुर्विश्ववन्दिता ।</text>
@@ -75,10 +76,18 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         </div>
 
         {/* Title reveal */}
-        <h2 className="mt-6 font-yatra text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron tracking-wider animate-pulse">
+        <h2
+          lang="mr"
+          className="mt-6 font-yatra text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-ivory via-gold-light to-saffron animate-pulse"
+          style={{ letterSpacing: 0, textTransform: 'none', lineHeight: 1.35 }}
+        >
           छत्रपती शिवाजी महाराज
         </h2>
-        <p className="mt-1 text-xs text-ivory/60 font-mukta tracking-widest uppercase">
+        <p
+          lang="mr"
+          className="mt-1 text-xs text-ivory/60 font-mukta"
+          style={{ letterSpacing: 0, textTransform: 'none' }}
+        >
           हिंदवी स्वराज्याची अखंड प्रेरणा
         </p>
 

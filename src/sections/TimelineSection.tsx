@@ -102,13 +102,23 @@ export const TimelineSection: React.FC = () => {
                     <span className="font-cinzel text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gold-light to-saffron">
                       {event.year}
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-saffron/15 border border-saffron/40 text-saffron font-mukta">
+                    <span
+                      lang={language === 'mr' ? 'mr' : undefined}
+                      className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-saffron/15 border border-saffron/40 text-saffron font-mukta ${
+                        language === 'mr' ? 'tracking-normal' : 'uppercase tracking-wider'
+                      }`}
+                      style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
+                    >
                       {language === 'mr' ? event.tag.mr : event.tag.en}
                     </span>
                   </div>
 
                   {/* Title & Location */}
-                  <h3 className="font-yatra text-lg sm:text-xl font-bold text-ivory mb-1">
+                  <h3
+                    lang={language === 'mr' ? 'mr' : undefined}
+                    className="font-yatra text-lg sm:text-xl font-bold text-ivory mb-1"
+                    style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined, lineHeight: 1.35 }}
+                  >
                     {language === 'mr' ? event.title.mr : event.title.en}
                   </h3>
 

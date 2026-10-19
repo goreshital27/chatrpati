@@ -65,7 +65,11 @@ export const FortModal: React.FC<FortModalProps> = ({ fort, onClose }) => {
             <h2 id="fort-modal-title" className="font-cinzel text-2xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-ivory to-gold">
               {fort.name}
             </h2>
-            <p className="font-yatra text-lg sm:text-xl text-saffron mt-0.5">
+            <p
+              lang="mr"
+              className="font-yatra text-lg sm:text-xl text-saffron mt-0.5"
+              style={{ letterSpacing: 0, textTransform: 'none', lineHeight: 1.35 }}
+            >
               {fort.nameMr}
             </p>
           </div>

@@ -19,9 +19,9 @@ export interface AnimatedTextProps {
  * Rules:
  * 1. NEVER split Devanagari text by character or code unit.
  * 2. For Marathi (lang="mr"), strictly WORD-LEVEL REVEAL (fade + rise + slight blur-out).
- * 3. Each word wrapped in inline-block with white-space: nowrap.
+ * 3. Each word wrapped in inline-block span with white-space: nowrap.
  * 4. For English only, grapheme splitting using Intl.Segmenter is supported.
- * 5. Word spans inherit background-clip gradient from parent heading to avoid breaking shaping runs.
+ * 5. Uses continuous metallic gold gradient on word level with zero letter-spacing.
  */
 export const AnimatedText: React.FC<AnimatedTextProps> = ({
   text,
@@ -65,7 +65,6 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
         const segmenter = new (Intl as any).Segmenter('en', { granularity: 'grapheme' });
         graphemes = Array.from(segmenter.segment(word), (s: any) => s.segment);
       } else {
-        // Safe Unicode array spread fallback
         graphemes = [...word];
       }
 
@@ -92,56 +91,49 @@ export const AnimatedText: React.FC<AnimatedTextProps> = ({
   return (
     <Component
       lang={activeLang}
-      className={`${className} ${isMarathi ? 'devanagari-text' : ''}`}
+      className={`contents ${className} ${isMarathi ? 'devanagari-text' : ''}`}
       style={style}
     >
       {isMarathi ? (
         segments.map((seg: any, idx) => (
-          <React.Fragment key={seg.key}>
-            <span
-              className={`inline-block whitespace-nowrap animate-word-reveal [background:inherit] [-webkit-background-clip:text] [background-clip:text] [-webkit-text-fill-color:transparent] ${
-                mobileStackWords ? 'block sm:inline-block' : ''
-              } ${wordClassName}`}
-              style={{
-                animationDelay: `${seg.delay}s`,
-                letterSpacing: 0,
-                textTransform: 'none',
-              }}
-            >
-              {seg.word}
-            </span>
-            {/* Spacing between words on desktop */}
-            {idx < segments.length - 1 && (
-              <span className={mobileStackWords ? 'hidden sm:inline' : 'inline'}>
-                {' '}
-              </span>
-            )}
-          </React.Fragment>
+          <span
+            key={seg.key}
+            className={`whitespace-nowrap animate-word-reveal ${
+              mobileStackWords
+                ? 'block sm:inline-block mb-1 sm:mb-0'
+                : 'inline-block'
+            } ${idx < segments.length - 1 ? 'sm:mr-5 md:mr-7' : ''} ${wordClassName}`}
+            style={{
+              animationDelay: `${seg.delay}s`,
+              letterSpacing: 0,
+              textTransform: 'none',
+            }}
+          >
+            {seg.word}
+          </span>
         ))
       ) : (
         segments.map((seg: any, idx) => (
-          <React.Fragment key={`en-word-${idx}`}>
-            <span
-              className={`inline-block whitespace-nowrap [background:inherit] [-webkit-background-clip:text] [background-clip:text] [-webkit-text-fill-color:transparent] ${
-                mobileStackWords ? 'block sm:inline-block' : ''
-              } ${wordClassName}`}
-            >
-              {seg.items.map((item: any) => (
-                <span
-                  key={item.key}
-                  className="inline-block animate-grapheme-reveal [background:inherit] [-webkit-background-clip:text] [background-clip:text] [-webkit-text-fill-color:transparent]"
-                  style={{ animationDelay: `${item.delay}s` }}
-                >
-                  {item.grapheme}
-                </span>
-              ))}
-            </span>
-            {idx < segments.length - 1 && (
-              <span className={mobileStackWords ? 'hidden sm:inline' : 'inline'}>
-                {' '}
+          <span
+            key={`en-word-${idx}`}
+            className={`whitespace-nowrap ${
+              mobileStackWords
+                ? 'block sm:inline-block mb-1 sm:mb-0'
+                : 'inline-block'
+            } ${idx < segments.length - 1 ? 'sm:mr-4 md:mr-6' : ''}`}
+          >
+            {seg.items.map((item: any) => (
+              <span
+                key={item.key}
+                className={`inline-block animate-grapheme-reveal ${wordClassName}`}
+                style={{
+                  animationDelay: `${item.delay}s`,
+                }}
+              >
+                {item.grapheme}
               </span>
-            )}
-          </React.Fragment>
+            ))}
+          </span>
         ))
       )}
     </Component>

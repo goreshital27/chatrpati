@@ -38,11 +38,14 @@ export const FortsSection: React.FC = () => {
           <button
             key={tab.id}
             onClick={() => setActiveCategory(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold font-mukta tracking-wider transition-all duration-300 uppercase ${
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold font-mukta transition-all duration-300 ${
+              language === 'mr' ? 'tracking-normal normal-case' : 'tracking-wider uppercase'
+            } ${
               activeCategory === tab.id
                 ? 'bg-gradient-to-r from-saffron to-gold text-charcoal shadow-gold-glow scale-105 font-black'
                 : 'bg-white/5 border border-gold/30 text-ivory/80 hover:text-white hover:border-gold hover:bg-white/10'
             }`}
+            style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
           >
             {tab.icon}
             <span>{tab.label}</span>
@@ -77,7 +80,10 @@ export const FortsSection: React.FC = () => {
       <div className="mt-14 text-center">
         <Link
           to="/forts"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-xs sm:text-sm font-bold uppercase tracking-widest text-charcoal bg-gradient-to-r from-gold via-gold-light to-gold hover:from-white hover:to-saffron border border-gold shadow-[0_0_25px_rgba(212,175,55,0.5)] [clip-path:polygon(12px_0,100%_0,calc(100%-12px)_100%,0_100%)] transition-all duration-300 font-mukta"
+          className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-xs sm:text-sm font-bold text-charcoal bg-gradient-to-r from-gold via-gold-light to-gold hover:from-white hover:to-saffron border border-gold shadow-[0_0_25px_rgba(212,175,55,0.5)] [clip-path:polygon(12px_0,100%_0,calc(100%-12px)_100%,0_100%)] transition-all duration-300 font-mukta ${
+            language === 'mr' ? 'tracking-normal normal-case' : 'uppercase tracking-widest'
+          }`}
+          style={{ letterSpacing: language === 'mr' ? 0 : undefined, textTransform: language === 'mr' ? 'none' : undefined }}
         >
           <span>{t.forts.viewAllForts}</span>
           <span className="text-base">→</span>
